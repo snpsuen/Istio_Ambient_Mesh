@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service-mesh-vs
+spec:
+  hosts:
+    - service-mesh
+  http:
+  - match:
+    - uri:
+        prefix: /web
+    rewrite:
+      uri: /    
+    route:
+    - destination:
+        host: webservice
+        subset: v1
+      weight: 25
+    - destination:
+        host: webservice
+        subset: v0
+      weight: 75
+  - match:
+    - uri:
+        prefix: /car
+    route:
+    - destination:
+        host: car-catalog-service
+        port:
+          number: 80
+  - route:
+    - destination:
+        host: truck-catalog-service
+        port:
+          number: 80
