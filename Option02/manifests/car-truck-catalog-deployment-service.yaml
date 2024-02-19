@@ -4,6 +4,7 @@ metadata:
   name: service-mesh
   labels:
     account: service-mesh
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
