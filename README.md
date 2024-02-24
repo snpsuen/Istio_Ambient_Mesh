@@ -18,5 +18,8 @@ spec:
 
 #### Sample use case
 
-We work with the same use case as the one devised earlier for another repo about [Istio service mesh](https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh)
+We work with the same use case as the one devised earlier for another repo about [Istio service mesh](https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh). In essence, it consists in a frontend pod using a virtual service to perform L7 content or traffic switching between different backend workloads. 
+1. Car catalog service
+2. Truck catalog service
+3. Web application
     
