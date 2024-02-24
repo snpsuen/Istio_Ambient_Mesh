@@ -18,5 +18,5 @@ spec:
 
 #### Sample use case
 
-We work with the same use case as the one devised earlier for another repo about [Istio service mesh].(https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh)
+We work with the same use case as the one devised earlier for another repo about [Istio service mesh](https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh)
     
