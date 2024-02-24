@@ -18,8 +18,14 @@ spec:
 
 #### Sample use case
 
-We work with the same use case as the one devised earlier for another repo about [Istio service mesh](https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh). In essence, it consists in a frontend pod using a virtual service to perform L7 content or traffic switching between different backend workloads. 
+We work with the same use case as the one devised earlier for another repo about [Istio service mesh](https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh). In essence, it consists in a frontend pod using a virtual service to perform L7 content or traffic switching between different backend services. 
 1. Car catalog service
 2. Truck catalog service
 3. Web application
     
+#### Option 1
+
+In this option, the entry point is defined to expose a filler pod based on the well known busybox docker. It is a more transparent approach as there is no need to make any change to the K8s manifests of the backend services and workloads. Any attributes required for the waypoint proxy weigh purely on the filler pod of the entry point. Nevertheless the downside is, the filler pod requires allocation of additional resources from the K8s cluster.
+
+
+
