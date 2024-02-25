@@ -79,7 +79,7 @@ kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option02
 ```
 4.  Deploy the virtual service together with the destination rule for the webapp service.
 ```
-kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/destination-rule-v4041.yaml
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option02/manifests/destination-rule-v4041.yaml
 ```
 5.  Set up a wayproxy to apply to the service-mesh service account.
 ```
