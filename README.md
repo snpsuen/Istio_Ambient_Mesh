@@ -21,7 +21,7 @@ spec:
 We work with the same use case as the one devised earlier for another repo about [Istio service mesh](https://github.com/snpsuen/Intra-K8s_Access_Istio_Service_Mesh). In essence, it consists in a frontend pod using a virtual service to perform L7 content or traffic switching between different backend services. 
 1. Car catalog service
 2. Truck catalog service
-3. Web application
+3. Webapp service
     
 #### Option 1
 
@@ -42,10 +42,22 @@ kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01
 ```
 3.  Deploy the entry point pod and service based on the busybox docker.
 
-The manifest of a service account named service-mesh is also defined in the same yaml file so that the entry point is assigned to it therein.
+The manifest of a service account named service-mesh is also defined in the same yaml file so that the entry point pod is assigned to it therein.
 ```
 kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/service-mesh-deployment-service.yaml
 ```
+4.  Deploy the virtual service together with the destination rule for the webapp service.
+```
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/destination-rule-v4041.yaml
+```
+5.  Set up a wayproxy to apply to the service-mesh service account.
+```
+istioctl x waypoint delete --service-account service-mesh
+```
+#### Option2 
+
+In this option, the entry point is defined to expose a filler pod based on the well known busybox docker
+
 
 
 
