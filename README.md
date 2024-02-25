@@ -36,6 +36,15 @@ Assume you have read through the [quickstart guide](https://istio.io/latest/docs
 kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option01/manifests/car-truck-catalog-deployment-service.yaml
 kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option01/manifests/webapp-deployment-v4041-service.yaml
 ```
+2.  Deploy the frontend pod and service.
+```
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/meshfront-deployment-service.yaml
+```
+3.  Deploy the entry point pod and service based on the busybox docker.
+In addition, a service account named service-mesh is also defined so that the entry point is assigned to it.
+```
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/service-mesh-deployment-service.yaml
+```
 
 
 
