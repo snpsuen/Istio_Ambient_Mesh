@@ -54,7 +54,7 @@ kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01
 ```
 istioctl x waypoint delete --service-account service-mesh
 ```
-#### Option2 
+#### Option 2 
 
 In this option, the entry point is defined to expose the backend pods through a new label, group: service-mesh. To adapt to the ambient mesh, the K8s manifests of the backend workloads need to be adjusted in the following aspects.
 1. Assigned to a new service account named service-mesh.
@@ -62,7 +62,29 @@ In this option, the entry point is defined to expose the backend pods through a 
 
 Unlike Option 1, it does not incur allocation of additional resources from the K8s cluster.
 
+##### Deployment procedure
 
+1.  Deploy the backend workloads and services together with the service account concerned.
+```
+kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option02/manifests/car-truck-catalog-deployment-service.yaml
+kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option02/manifests/webapp-deployment-v4041-service.yaml
+```
+2.  Deploy the frontend pod and service.
+```
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option02/manifests/meshfront-deployment-service.yaml
+```
+3.  Deploy the entry point service that expose the backend pods as fillers.
+```
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option02/manifests/service-mesh-service.yaml
+```
+4.  Deploy the virtual service together with the destination rule for the webapp service.
+```
+kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/destination-rule-v4041.yaml
+```
+5.  Set up a wayproxy to apply to the service-mesh service account.
+```
+istioctl x waypoint delete --service-account service-mesh
+```
 
 
 
