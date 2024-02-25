@@ -42,7 +42,7 @@ kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01
 ```
 3.  Deploy the entry point pod and service based on the busybox docker.
 
-In addition, a service account named service-mesh is also defined so that the entry point is assigned to it.
+The manifest of a service account named service-mesh is also defined in the same yaml file so that the entry point is assigned to it therein.
 ```
 kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option01/manifests/service-mesh-deployment-service.yaml
 ```
