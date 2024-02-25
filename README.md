@@ -56,7 +56,7 @@ istioctl x waypoint delete --service-account service-mesh
 ```
 #### Option2 
 
-In this option, the entry point is defined to expose a filler pod based on the well known busybox docker
+In this option, the entry point is defined to expose the backend pods through a new label, group: service-mesh.
 
 
 
