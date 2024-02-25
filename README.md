@@ -33,8 +33,8 @@ Assume you have read through the [quickstart guide](https://istio.io/latest/docs
 
 1.  Deploy the backend workloads and services.
 ```
-kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option02/manifests/car-truck-catalog-deployment-service.yaml
-kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option02/manifests/webapp-deployment-v4041-service.yaml
+kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option01/manifests/car-truck-catalog-deployment-service.yaml
+kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option01/manifests/webapp-deployment-v4041-service.yaml
 ```
 
 
