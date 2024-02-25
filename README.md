@@ -25,11 +25,19 @@ We work with the same use case as the one devised earlier for another repo about
     
 #### Option 1
 
-In this option, the entry point is defined to expose a filler pod based on the well known busybox docker. It is a more transparent approach as there is no need to make any change to the K8s manifests of the backend services and workloads. Any attributes required for interaction with the waypoint proxy weigh purely on the filler pod of the entry point. Nevertheless the downside is, the filler pod requires allocation of additional resources from the K8s cluster.
+In this option, the entry point is defined to expose a filler pod based on the well known busybox docker. It is a more transparent approach as there is no need to make any change to the K8s manifests of the backend services and workloads. Any attributes or settings related to the waypoint proxy weigh squarely on the filler pod of the entry point and nothing else. Nevertheless the downside is, the filler pod requires allocation of additional resources from the K8s cluster.
 
-##### Setup procedure
+##### Deployment procedure
 
-1.  Deploy the backend services
+Assume you have read through the [quickstart guide](https://istio.io/latest/docs/ops/ambient/getting-started/) to set up an ambient mesh on a K8s cluster.
+
+1.  Deploy the backend workloads and services.
+```
+kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option02/manifests/car-truck-catalog-deployment-service.yaml
+kubectl apply -f https://raw.githubusercontent.com/snpsuen/Istio_Ambient_Mesh/main/Option02/manifests/webapp-deployment-v4041-service.yaml
+```
+
+
 
 
 
