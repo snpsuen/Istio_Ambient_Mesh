@@ -86,6 +86,25 @@ kubectl apply -f https://github.com/snpsuen/Istio_Ambient_Mesh/raw/main/Option02
 istioctl x waypoint delete --service-account service-mesh
 ```
 
+### Test it out
+
+Land in the home page (index.html) on meshfront-service via the given load balancing VIP or node port of one of the K8s hosts, and select a backend service to access. May need to set up a NAT port forwarding chain to map a port of your desktop to the appropriate listener port of the entry point service.
+
+![Meshfront landing page](Interneal_service_mesh_portal_cut.jpg)
+
+Alternatively, use curl on a K8s host to generate POST traffic repetively to meshfront-service via the given node port.
+~~~
+while true
+do
+  curl -X POST -F 'path=web' http://localhost:<NodePort>/accessmesh
+  echo ""
+  curl -X POST -F 'path=car' http://localhost:<NodePort>/accessmesh | grep car
+  curl -X POST -F 'path=truck' http://localhost:<NodePort>/accessmesh | grep truck
+  sleep 3
+done
+~~~
+
+
 
 
 
