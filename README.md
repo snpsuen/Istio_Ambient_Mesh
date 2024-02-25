@@ -56,7 +56,12 @@ istioctl x waypoint delete --service-account service-mesh
 ```
 #### Option2 
 
-In this option, the entry point is defined to expose the backend pods through a new label, group: service-mesh.
+In this option, the entry point is defined to expose the backend pods through a new label, group: service-mesh. To adapt to the ambient mesh, the K8s manifests of the backend workloads need to be adjusted in the following aspects.
+1. Assigned to a new service account named service-mesh.
+2. Marked with a second label, group: service, to map to the entry point service.
+
+Unlike Option 1, it does not incur allocation of additional resources from the K8s cluster.
+
 
 
 
