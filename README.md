@@ -1,6 +1,7 @@
-### Entry point to a virtual service in the Istio ambient mesh
 
 ![Istio_ambient_virtualservice](Istiovirtualservicecomboaccess_202403.png)
+
+### Entry point to a virtual service in the Istio ambient mesh
 
 The repo provides two options for defining a K8s service as an entry point to an Istio virtual service deployed within an ambient mesh. 
 1. By exposing a designated, known pod, say busybox, as a dummy
