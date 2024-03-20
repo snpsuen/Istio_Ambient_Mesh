@@ -57,7 +57,7 @@ metadata:
   name: tcp-echo
 spec:
   hosts:
-  - istio-ingressgateway.istio-system
+  - istio-ingressgateway.istio-system.svc.cluster.local
   - tcp-echo-podless
   gateways:
   - mesh
