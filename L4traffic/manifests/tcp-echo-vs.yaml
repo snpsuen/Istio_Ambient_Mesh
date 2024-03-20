@@ -27,6 +27,16 @@ spec:
     hosts:
     - "*"
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tcp-echo-podless
+spec:
+  ports:
+  - name: tcp-echo
+    protocol: TCP
+    port: 31400
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
@@ -47,9 +57,10 @@ metadata:
   name: tcp-echo
 spec:
   hosts:
-  - "*"
+  - istio-ingressgateway.istio-system
+  - tcp-echo-podless
   gateways:
-  - tcp-echo-gateway
+  - mesh
   tcp:
   - match:
     - port: 31400
