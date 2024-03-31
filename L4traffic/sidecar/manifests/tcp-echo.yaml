@@ -22,8 +22,7 @@ metadata:
 spec:
   ports:
   - name: tcp
-    port: 31400
-    targetPort: 9000
+    port: 9000
   selector:
     app: tcp-echo
 ---
