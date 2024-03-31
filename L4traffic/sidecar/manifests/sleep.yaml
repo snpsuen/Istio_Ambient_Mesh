@@ -45,7 +45,6 @@ spec:
         app: sleep
     spec:
       terminationGracePeriodSeconds: 0
-      serviceAccountName: sleep
       containers:
       - name: sleep
         image: curlimages/curl
