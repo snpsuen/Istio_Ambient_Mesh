@@ -12,16 +12,6 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: tcp-echo-podless
-spec:
-  ports:
-  - name: tcp-echo
-    protocol: TCP
-    port: 31400
----
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
@@ -42,7 +32,7 @@ metadata:
   name: tcp-echo-vs
 spec:
   hosts:
-  - tcp-echo-podless
+  - tcp-echo
   gateways:
   - mesh
   tcp:
