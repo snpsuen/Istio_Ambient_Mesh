@@ -48,6 +48,6 @@ spec:
     - destination:
         host: tcp-echo
         port:
-          number: 9000
+          number: 31400
         subset: v2
       weight: 0
