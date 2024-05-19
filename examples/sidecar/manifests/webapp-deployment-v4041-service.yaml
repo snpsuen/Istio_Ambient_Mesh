@@ -84,8 +84,8 @@ metadata:
   name: webservice
 spec:
   selector:
-    type: NodePort
     app: webapp
+  type: NodePort
   ports:
   - name: http-webservice
     protocol: TCP
