@@ -28,7 +28,7 @@ metadata:
     service: tcp-echo
 spec:
   ports:
-  - name: tcp
+  - name: tcp-echo
     port: 31400
     targetPort: 9000
   selector:
