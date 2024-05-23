@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: service-mesh
+  labels:
+    account: service-mesh
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-mesh-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-mesh
+  template:
+    metadata:
+      labels:
+        app: service-mesh
+    spec:
+      serviceAccountName: service-mesh
+      containers:
+      - name: service-mesh
+        image: busybox
+        command:
+        - sleep
+        - infinity
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-mesh
+  labels:
+    app: service-mesh
+spec:
+  ports:
+  - name: http-service-mesh
+    protocol: TCP
+    port: 80
+  selector:
+    app: service-mesh
