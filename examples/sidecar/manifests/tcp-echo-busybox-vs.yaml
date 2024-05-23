@@ -24,13 +24,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-mesh
+  name: busybox
   labels:
-    app: service-mesh
+    app: busybox
 spec:
   ports:
-  - name: http-service-mesh
     protocol: TCP
-    port: 80
+    port: 31400
+    
   selector:
     app: service-mesh
