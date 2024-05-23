@@ -29,8 +29,7 @@ metadata:
     app: busybox
 spec:
   ports:
-    protocol: TCP
-    port: 31400
+  - port: 31400
     targetPort: 9000
   selector:
     app: busybox
