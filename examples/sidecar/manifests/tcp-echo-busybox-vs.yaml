@@ -6,21 +6,20 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-mesh
+      app: busybox
   template:
     metadata:
       labels:
-        app: service-mesh
+        app: busybox
     spec:
-      serviceAccountName: service-mesh
       containers:
-      - name: service-mesh
+      - name: busybox
         image: busybox
         command:
         - sleep
         - infinity
         ports:
-        - containerPort: 80
+        - containerPort: 9000
 ---
 apiVersion: v1
 kind: Service
