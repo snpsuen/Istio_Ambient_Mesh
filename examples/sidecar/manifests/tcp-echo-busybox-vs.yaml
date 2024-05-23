@@ -31,6 +31,6 @@ spec:
   ports:
     protocol: TCP
     port: 31400
-    
+    targetPort: 9000
   selector:
-    app: service-mesh
+    app: busybox
