@@ -45,7 +45,6 @@ spec:
         app: tcp-echo
         version: v1
     spec:
-      serviceAccountName: tcp-echo
       containers:
       - name: tcp-echo
         image: docker.io/istio/tcp-echo-server:1.2
@@ -73,7 +72,6 @@ spec:
         app: tcp-echo
         version: v2
     spec:
-      serviceAccountName: tcp-echo
       containers:
       - name: tcp-echo
         image: docker.io/istio/tcp-echo-server:1.2
