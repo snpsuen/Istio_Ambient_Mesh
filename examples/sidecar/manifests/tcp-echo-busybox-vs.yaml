@@ -15,7 +15,7 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: tcp-echo-vs
+  name: tcp-echo-busybox-vs
 spec:
   hosts:
   - busybox
