@@ -52,4 +52,4 @@ spec:
         host: tcp-echo
         port:
           number: 9000
-        subset: v1
+        subset: v2
