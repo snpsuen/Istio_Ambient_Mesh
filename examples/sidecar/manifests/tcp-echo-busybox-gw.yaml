@@ -47,7 +47,7 @@ metadata:
   name: tcp-echo-busybox-vs
 spec:
   hosts:
-  - tcp-echo-busybox
+  - busybox
   gateways:
   - mesh
   - tcp-echo-gateway
