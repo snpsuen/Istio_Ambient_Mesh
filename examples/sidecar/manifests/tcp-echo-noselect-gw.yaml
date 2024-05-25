@@ -12,6 +12,23 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: tcp-echo-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 31400
+      name: tcp-echo
+      protocol: TCP
+    hosts:
+    - "*"
+---
+
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -42,6 +59,7 @@ metadata:
 spec:
   hosts:
   - noselect
+  - tcp-echo-gateway
   gateways:
   - mesh
   tcp:
