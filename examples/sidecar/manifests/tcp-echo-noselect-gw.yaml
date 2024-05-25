@@ -57,9 +57,9 @@ metadata:
 spec:
   hosts:
   - noselect
-  - tcp-echo-gateway
   gateways:
   - mesh
+  - tcp-echo-gateway
   tcp:
   - match:
     - port: 31400
