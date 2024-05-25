@@ -49,7 +49,6 @@ spec:
   hosts:
   - "*"
   gateways:
-  - mesh
   - tcp-echo-gateway
   tcp:
   - match:
