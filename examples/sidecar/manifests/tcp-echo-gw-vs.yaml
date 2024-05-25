@@ -23,7 +23,6 @@ spec:
   servers:
   - port:
       number: 31400
-      name: tcp
       protocol: TCP
     hosts:
     - "*"
