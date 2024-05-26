@@ -81,13 +81,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webservice
+  name: webapp
 spec:
   selector:
     app: webapp
   type: NodePort
   ports:
-  - name: http-webservice
+  - name: http
     protocol: TCP
     port: 80
     targetPort: 5000
