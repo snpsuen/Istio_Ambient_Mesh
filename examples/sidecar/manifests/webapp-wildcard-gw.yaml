@@ -54,6 +54,8 @@ spec:
   - match:
     - uri:
         prefix: /webapp
+    rewrite:
+      uri: "/"
     route:
     - destination:
         host: webapp
