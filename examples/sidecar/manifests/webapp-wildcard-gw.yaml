@@ -59,4 +59,9 @@ spec:
     route:
     - destination:
         host: webapp
+        subset: v1
+      weight: 10
+    - destination:
+        host: webapp
         subset: v2
+      weight: 90 
