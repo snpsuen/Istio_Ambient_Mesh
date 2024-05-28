@@ -58,7 +58,6 @@ metadata:
 spec:
   hosts:
   - webapp-noselect
-  - "*"
   gateways:
   - mesh
   - webapp-gateway
