@@ -12,20 +12,15 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
+apiVersion: v1
+kind: Service
 metadata:
-  name: webapp-gateway
+  name: webapp-noselect
 spec:
-  selector:
-    istio: ingressgateway
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "*"
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -47,9 +42,9 @@ metadata:
   name: webapp-wildcard-vs
 spec:
   hosts:
-  - "*"
+  - webapp-noselect
   gateways:
-  - webapp-gateway
+  - mesh
   http:
   - match:
     - uri:
