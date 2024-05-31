@@ -53,7 +53,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /webapp
+        prefix: /vspath
     rewrite:
       uri: /
     route:
