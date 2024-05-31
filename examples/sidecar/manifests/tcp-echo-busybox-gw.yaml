@@ -12,6 +12,19 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+apiVersion: v1
+kind: Service
+metadata:
+  name: busybox
+  labels:
+    app: busybox
+spec:
+  ports:
+  - port: 31400
+    targetPort: 9000
+  selector:
+    app: busybox
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
