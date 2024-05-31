@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: generic-noselect
+  name: dummy-noselect
 spec:
   ports:
   - name: http
