@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dummy-noselect
+  name: httpany-noselect
 spec:
   ports:
   - name: http
@@ -55,10 +55,10 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: webapp-noselect-vs
+  name: httpany-noselect-vs
 spec:
   hosts:
-  - generic-noselect
+  - httpany-noselect
   gateways:
   - mesh
   - webapp-gateway
