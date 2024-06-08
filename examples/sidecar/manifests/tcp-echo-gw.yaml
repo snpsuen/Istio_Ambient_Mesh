@@ -48,7 +48,7 @@ metadata:
   name: tcp-echo-vs
 spec:
   hosts:
-  - tcp-echo
+  - tcp-echo-gw
   gateways:
   - mesh
   - tcp-echo-gateway
