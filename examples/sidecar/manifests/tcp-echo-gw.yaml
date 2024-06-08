@@ -45,10 +45,10 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: tcp-echo-vs
+  name: tcp-echo-gw-vs
 spec:
   hosts:
-  - tcp-echo-gw
+  - tcp-echo
   gateways:
   - mesh
   - tcp-echo-gateway
