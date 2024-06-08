@@ -12,6 +12,8 @@ spec:
     name: http
   - port: 443
     name: https
+  - port: 31400
+    name: tcp
 ---
 apiVersion: apps/v1
 kind: Deployment
